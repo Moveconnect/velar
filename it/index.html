@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="it" data-route="folders" data-locale="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>VELAR | Abbigliamento e outfit completi online</title>
+<meta name="description" content="Capi singoli e outfit completi in due stili, Minimal Elegante e Streetwear &amp; Oversize. Scopri il tuo outfit con il quiz di VELAR.">
+<link rel="canonical" href="https://velar.it/it/">
+<link rel="alternate" hreflang="it" href="https://velar.it/it/">
+<link rel="alternate" hreflang="en" href="https://velar.it/en/">
+<link rel="alternate" hreflang="x-default" href="https://velar.it/it/">
+<meta name="theme-color" content="#111111">
+<link rel="preload" href="../assets/fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/css/fonts.css">
+<script>document.documentElement.classList.add('js');</script>
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+<a class="skip" href="#main" data-i18n="skip">Vai al contenuto</a>
+
+<!-- Definizioni condivise dalle illustrazioni segnaposto delle foto -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <filter id="vsh" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".13"/>
+    </filter>
+    <linearGradient id="vsheen" x1="0" y1="0" x2="1" y2="0.3">
+      <stop offset="0" stop-color="#fff" stop-opacity=".14"/>
+      <stop offset=".45" stop-color="#fff" stop-opacity="0"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".12"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<!-- NAVBAR: le due macro categorie con pannello delle sezioni, logo al centro, preferiti e carrello -->
+<header class="hdr" id="hdr">
+  <div class="hdr__in">
+    <div class="hdr__left">
+      <button class="hdr__btn hdr__menu" id="menuOpen" type="button" aria-controls="mnav" aria-expanded="false" data-i18n-attr="aria-label:nav.menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 8.5h17M3.5 15.5h17"/></svg>
+      </button>
+      <nav class="nav" data-i18n-attr="aria-label:nav.label">
+        <ul class="nav__list">
+          <li><button class="nav__trigger" type="button" data-mega="minimal" aria-expanded="false" aria-controls="mega-minimal" data-i18n="style.minimal">Minimal Elegante</button></li>
+          <li><button class="nav__trigger" type="button" data-mega="street" aria-expanded="false" aria-controls="mega-street" data-i18n="style.street">Streetwear &amp; Oversize</button></li>
+        </ul>
+      </nav>
+    </div>
+    <a class="logo" href="#top" id="logoLink" data-i18n-attr="aria-label:nav.home">Velar</a>
+    <div class="hdr__icons">
+      <button class="hdr__btn" id="favOpen" type="button" data-i18n-attr="aria-label:favs.title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.2 4.2 0 0 1 12 7.4a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>
+        <span class="count" id="favCount"></span>
+      </button>
+      <button class="hdr__btn" id="cartOpen" type="button" data-i18n-attr="aria-label:cart.title">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6.5a3 3 0 0 1 6 0V8"/></svg>
+        <span class="count" id="cartCount"></span>
+      </button>
+    </div>
+  </div>
+  <!-- Pannelli delle sezioni (desktop): contenuto generato in app.js -->
+  <div class="mega" id="mega-minimal" hidden></div>
+  <div class="mega" id="mega-street" hidden></div>
+</header>
+<div class="nav-scrim" id="navScrim" hidden></div>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top" aria-labelledby="claim">
+    <video class="hero__video" id="heroVideo" muted loop playsinline autoplay preload="metadata" aria-hidden="true" tabindex="-1"></video>
+    <div class="hero__fallback" aria-hidden="true">
+      <div class="hero__art" id="heroArt"></div>
+      <div class="hero__grain"></div>
+    </div>
+    <div class="hero__veil" aria-hidden="true"></div>
+    <div class="hero__content">
+      <h1 class="hero__claim" id="claim" lang="en">Every era has its own signature style</h1>
+      <div class="hero__cta">
+        <button class="btn-hero" type="button" data-open-quiz>
+          <span data-i18n="hero.cta">Scopri il tuo outfit</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.3" aria-hidden="true"><path d="M1 8h13M9.5 3.5 14 8l-4.5 4.5"/></svg>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. OUTFIT DEL MESE -->
+  <section class="sec om" aria-labelledby="omTitle">
+    <div class="wrap" data-reveal>
+      <div class="sec__head" data-ri>
+        <h2 class="h2" id="omTitle" data-i18n="om.title">Outfit del mese</h2>
+      </div>
+      <div class="rail" id="omList"></div>
+    </div>
+  </section>
+
+  <!-- 3. I DUE STILI (da confermare) -->
+  <section class="stl" aria-labelledby="stlTitle">
+    <h2 class="sr" id="stlTitle" data-i18n="styles.title">I due stili</h2>
+    <div class="styles" id="styleList" data-reveal></div>
+  </section>
+
+  <!-- 4. LE NOVITÀ -->
+  <section class="sec nw" aria-labelledby="nwTitle">
+    <div class="wrap" data-reveal>
+      <div class="sec__head" data-ri>
+        <h2 class="h2" id="nwTitle" data-i18n="new.title">Le novità</h2>
+      </div>
+      <div class="rail" id="nwList"></div>
+      <div class="nw__foot" data-ri style="--i:6">
+        <a class="btn btn--ghost" href="/it/novita" data-page="page.new" data-i18n="new.all">Vedi tutte le novità</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. SOCIAL (compare solo con almeno 4 video) -->
+  <section class="sec sec--alt so" id="social" aria-labelledby="soTitle" hidden>
+    <div class="wrap" data-reveal>
+      <div class="sec__head" data-ri>
+        <h2 class="h2" id="soTitle" data-i18n="social.title">VELAR sui social</h2>
+      </div>
+      <div class="rail" id="soList"></div>
+      <div class="so__follow" id="soFollow" data-ri style="--i:6"></div>
+      <p class="so__note" data-ri style="--i:7">
+        <span data-i18n="social.note">I video si aprono qui se hai accettato i cookie dei contenuti multimediali, altrimenti su TikTok o YouTube.</span>
+        <button type="button" data-open-cookie-prefs data-i18n="cookie.manage">Gestisci preferenze cookie</button>
+      </p>
+    </div>
+  </section>
+
+  <!-- 6. SCOPRI IL TUO OUTFIT -->
+  <section class="sec" id="quizInvite" aria-labelledby="qsTitle">
+    <div class="wrap grid qs" data-reveal>
+      <div class="qs__intro" data-ri>
+        <h2 class="h2" id="qsTitle" data-i18n="qs.title">Scopri il tuo outfit</h2>
+        <p class="qs__text" data-i18n="qs.text">Sei domande, meno di un minuto: ti proponiamo un outfit completo nelle tue taglie.</p>
+      </div>
+      <div class="qs__ask" data-ri style="--i:1">
+        <h3 class="h3 qs__q" id="qsQ" data-i18n="q.style">Quale stile ti rappresenta?</h3>
+        <div class="opts" id="qsOpts" role="group" aria-labelledby="qsQ"></div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- 7. FOOTER -->
+<footer class="ftr" aria-labelledby="ftrTitle">
+  <h2 class="sr" id="ftrTitle" data-i18n="ftr.title">Informazioni su VELAR</h2>
+  <div class="wrap">
+    <p class="ftr__logo" aria-hidden="true">VELAR</p>
+    <div class="grid ftr__top">
+      <div class="ftr__news">
+        <h2 class="label" data-i18n="news.title">Newsletter</h2>
+        <form class="news" id="newsForm" novalidate>
+          <p data-i18n="news.text">Novità e outfit del mese nella tua email.</p>
+          <div class="news__row">
+            <label class="sr" for="newsEmail" data-i18n="news.label">Email</label>
+            <input id="newsEmail" name="email" type="email" autocomplete="email" inputmode="email" data-i18n-attr="placeholder:news.ph" placeholder="nome@email.it" aria-describedby="newsMsg">
+            <button class="btn" type="submit" data-i18n="news.submit">Iscriviti</button>
+          </div>
+          <label class="check">
+            <input type="checkbox" id="newsConsent" name="consent">
+            <span><span data-i18n="news.consent">Voglio ricevere la newsletter. Ho letto l’informativa</span> <a href="/it/privacy" data-page="page.privacy" data-i18n="news.privacy">privacy</a>.</span>
+          </label>
+          <p class="news__msg" id="newsMsg" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+
+      <nav class="ftr__col" aria-labelledby="fShop">
+        <h2 class="label" id="fShop" data-i18n="ftr.shop">Acquisti</h2>
+        <ul>
+          <li><a href="/it/condizioni-di-vendita" data-page="page.terms" data-i18n="page.terms">Condizioni di vendita</a></li>
+          <li><a href="/it/spedizioni" data-page="page.shipping" data-i18n="page.shipping">Spedizioni</a></li>
+          <li><a href="/it/resi-e-rimborsi" data-page="page.returns" data-i18n="page.returns">Resi e rimborsi</a></li>
+          <li><a href="/it/guida-taglie" data-page="page.sizes" data-i18n="page.sizes">Guida taglie</a></li>
+          <li><a href="/it/faq" data-page="page.faq" data-i18n="page.faq">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <nav class="ftr__col" aria-labelledby="fLegal">
+        <h2 class="label" id="fLegal" data-i18n="ftr.legal">Privacy</h2>
+        <ul>
+          <li><a href="/it/privacy" data-page="page.privacy" data-i18n="page.privacy">Privacy policy</a></li>
+          <li><a href="/it/cookie" data-page="page.cookie" data-i18n="page.cookie">Cookie policy</a></li>
+          <li><button type="button" data-open-cookie-prefs data-i18n="cookie.manage">Gestisci preferenze cookie</button></li>
+        </ul>
+      </nav>
+
+      <div class="ftr__contact">
+        <h2 class="label" data-i18n="ftr.contact">Contatti</h2>
+        <ul id="ftrContacts"></ul>
+        <div class="ftr__social" id="ftrSocial"></div>
+        <div class="langsel" role="group" data-i18n-attr="aria-label:ftr.lang">
+          <button type="button" data-lang="it" aria-pressed="true" lang="it" aria-label="Italiano">IT</button>
+          <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="ftr__bottom">
+      <div>
+        <p class="sr" data-i18n="ftr.pay">Pagamenti accettati</p>
+        <!-- Sostituire con le icone ufficiali dei circuiti (kit grafici di Stripe, Visa, Mastercard, Apple, Google) -->
+        <ul class="pay" id="payList"></ul>
+      </div>
+      <p class="ftr__dim"><span data-i18n="ftr.company">Ragione sociale, sede legale e partita IVA da inserire</span>. © 2026 VELAR</p>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ Livelli ============ -->
+<div class="scrim" id="scrim" hidden></div>
+
+<!-- Menu mobile -->
+<aside class="drawer drawer--left mnav" id="mnav" role="dialog" aria-modal="true" aria-labelledby="mnavTitle" hidden>
+  <div class="drawer__head">
+    <h2 class="sr" id="mnavTitle" data-i18n="nav.menuTitle">Menu</h2>
+    <span class="logo" aria-hidden="true">Velar</span>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <nav class="drawer__body mnav__body" id="mnavBody" data-i18n-attr="aria-label:nav.label"></nav>
+  <div class="drawer__foot mnav__foot">
+    <div class="langsel langsel--light" role="group" data-i18n-attr="aria-label:ftr.lang">
+      <button type="button" data-lang="it" aria-pressed="true" lang="it" aria-label="Italiano">IT</button>
+      <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
+    </div>
+  </div>
+</aside>
+
+<!-- Scelta taglie per gli outfit del mese -->
+<aside class="drawer" id="sizeDrawer" role="dialog" aria-modal="true" aria-labelledby="sizeDrawerTitle" hidden>
+  <div class="drawer__head">
+    <h2 class="label" id="sizeDrawerTitle" data-i18n="sizes.title">Scegli le taglie</h2>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="drawer__body" id="sizeDrawerBody"></div>
+  <div class="drawer__foot" id="sizeDrawerFoot"></div>
+</aside>
+
+<!-- Carrello -->
+<aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" hidden>
+  <div class="drawer__head">
+    <h2 class="label" id="cartTitle"><span data-i18n="cart.title">Carrello</span> <span class="muted num" id="cartTitleCount"></span></h2>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="drawer__body" id="cartBody"></div>
+  <div class="drawer__foot" id="cartFoot"></div>
+</aside>
+
+<!-- Preferiti -->
+<aside class="drawer" id="favDrawer" role="dialog" aria-modal="true" aria-labelledby="favTitle" hidden>
+  <div class="drawer__head">
+    <h2 class="label" id="favTitle" data-i18n="favs.title">Preferiti</h2>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="drawer__body" id="favBody"></div>
+</aside>
+
+<!-- Scelta taglia dal basso (mobile) -->
+<div class="sheet" id="sizeSheet" role="dialog" aria-modal="true" aria-labelledby="sheetTitle" hidden>
+  <div class="sheet__grip" aria-hidden="true"></div>
+  <div class="sheet__head">
+    <h2 class="label" id="sheetTitle" data-i18n="sheet.title">Scegli la taglia</h2>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div id="sheetBody"></div>
+</div>
+
+<!-- Quiz a schermo intero -->
+<div class="quiz" id="quiz" role="dialog" aria-modal="true" aria-labelledby="quizQ" hidden>
+  <div class="quiz__top">
+    <span class="label quiz__step num" id="quizStep"></span>
+    <div class="quiz__bar" role="progressbar" aria-valuemin="0" aria-valuemax="6" id="quizBar"><span id="quizBarFill"></span></div>
+    <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:quiz.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  </div>
+  <div class="quiz__main" id="quizMain">
+    <div class="quiz__stage" id="quizStage"></div>
+  </div>
+  <div class="quiz__nav" id="quizNav">
+    <button class="btn btn--ghost" type="button" id="quizBack" data-i18n="quiz.back">Indietro</button>
+    <button class="btn btn--solid" type="button" id="quizNext" data-i18n="quiz.next">Avanti</button>
+  </div>
+</div>
+
+<!-- Preferenze cookie -->
+<div class="modal" id="cookieModal" role="dialog" aria-modal="true" aria-labelledby="cookieModalTitle" hidden>
+  <div class="modal__card">
+    <div class="modal__head">
+      <h2 class="label" id="cookieModalTitle" data-i18n="cookie.prefs">Preferenze cookie</h2>
+      <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+    </div>
+    <div class="modal__body">
+      <div class="toggle-row">
+        <div><strong data-i18n="cookie.nec">Necessari</strong><p data-i18n="cookie.necText">Carrello, preferiti, lingua e sicurezza. Sempre attivi.</p></div>
+        <input class="switch" type="checkbox" checked disabled data-i18n-attr="aria-label:cookie.nec">
+      </div>
+      <div class="toggle-row">
+        <div><strong data-i18n="cookie.media">Contenuti multimediali</strong><p data-i18n="cookie.mediaText">Video di YouTube e TikTok riprodotti nel sito.</p></div>
+        <input class="switch" type="checkbox" id="ckMedia" data-i18n-attr="aria-label:cookie.media">
+      </div>
+      <div class="toggle-row">
+        <div><strong data-i18n="cookie.stats">Statistiche</strong><p data-i18n="cookie.statsText">Dati aggregati su come viene usato il sito.</p></div>
+        <input class="switch" type="checkbox" id="ckStats" data-i18n-attr="aria-label:cookie.stats">
+      </div>
+      <div class="modal__actions">
+        <button class="btn btn--ghost" type="button" id="ckRejectAll" data-i18n="cookie.reject">Rifiuta</button>
+        <button class="btn btn--solid" type="button" id="ckSave" data-i18n="cookie.save">Salva preferenze</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Player video social -->
+<div class="player" id="player" role="dialog" aria-modal="true" aria-labelledby="playerTitle" hidden>
+  <h2 class="sr" id="playerTitle"></h2>
+  <button class="ibtn ibtn--bare player__close" type="button" data-close data-i18n-attr="aria-label:player.close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
+  <div>
+    <div class="player__frame" id="playerFrame"></div>
+    <p class="player__alt" id="playerAlt"></p>
+  </div>
+</div>
+
+<!-- Banner cookie -->
+<div class="cookie" id="cookieBanner" role="region" data-i18n-attr="aria-label:cookie.region" hidden>
+  <button class="ibtn ibtn--bare cookie__x" type="button" id="ckX" data-i18n-attr="aria-label:cookie.x"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+  <p><span data-i18n="cookie.text">Usiamo cookie tecnici per far funzionare il sito. Con il tuo consenso usiamo anche cookie di terze parti per mostrare qui i video di YouTube e TikTok e cookie statistici per migliorare il sito.</span> <a href="/it/cookie" data-page="page.cookie" data-i18n="page.cookie">Cookie policy</a></p>
+  <div class="cookie__actions">
+    <button class="btn btn--ghost" type="button" id="ckReject" data-i18n="cookie.reject">Rifiuta</button>
+    <button class="btn btn--ghost" type="button" data-open-cookie-prefs data-i18n="cookie.custom">Personalizza</button>
+    <button class="btn btn--solid" type="button" id="ckAccept" data-i18n="cookie.accept">Accetta tutti</button>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="../assets/js/strings.js"></script>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>

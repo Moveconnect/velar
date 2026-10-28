@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VELAR</title>
+<link rel="alternate" hreflang="it" href="https://velar.it/it/">
+<link rel="alternate" hreflang="en" href="https://velar.it/en/">
+<link rel="alternate" hreflang="x-default" href="https://velar.it/it/">
+<script>
+  /* Ultima lingua scelta, altrimenti la lingua del browser; italiano come predefinito */
+  (function () {
+    var l = null;
+    try { l = JSON.parse(localStorage.getItem('velar:lang')); } catch (e) {}
+    if (l !== 'it' && l !== 'en') l = /^it\b/i.test(navigator.language || 'it') ? 'it' : 'en';
+    location.replace(l + '/' + (location.protocol === 'file:' ? 'index.html' : ''));   // aperto dal disco: punta al file
+  })();
+</script>
+<noscript><meta http-equiv="refresh" content="0; url=it/"></noscript>
+</head>
+<body><a href="it/">VELAR</a></body>
+</html>
