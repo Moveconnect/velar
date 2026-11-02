@@ -33,21 +33,25 @@
   </defs>
 </svg>
 
-<!-- NAVBAR: le due macro categorie con pannello delle sezioni, logo al centro, preferiti e carrello -->
+<!-- NAVBAR: logo a sinistra; le due macro categorie a destra, prima di preferiti e carrello -->
 <header class="hdr" id="hdr">
   <div class="hdr__in">
     <div class="hdr__left">
       <button class="hdr__btn hdr__menu" id="menuOpen" type="button" aria-controls="mnav" aria-expanded="false" data-i18n-attr="aria-label:nav.menu">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3.5 8.5h17M3.5 15.5h17"/></svg>
       </button>
-      <nav class="nav" data-i18n-attr="aria-label:nav.label">
-        <ul class="nav__list">
-          <li><button class="nav__trigger" type="button" data-mega="minimal" aria-expanded="false" aria-controls="mega-minimal" data-i18n="style.minimal">Minimal Elegante</button></li>
-          <li><button class="nav__trigger" type="button" data-mega="street" aria-expanded="false" aria-controls="mega-street" data-i18n="style.street">Streetwear &amp; Oversize</button></li>
-        </ul>
-      </nav>
+      <!-- LOGO: sostituire il file assets/img/logo.svg con il logo VELAR (SVG o PNG con fondo trasparente, versione scura)
+           oppure cambiare src. Sopra il video diventa bianco da solo; l'altezza si regola con --logo-h in style.css. -->
+      <a class="logo" href="#top" id="logoLink" data-i18n-attr="aria-label:nav.home">
+        <img class="logo__img" src="/assets/img/logo.png" alt="VELAR" width="153" height="24" fetchpriority="high">
+      </a>
     </div>
-    <a class="logo" href="#top" id="logoLink" data-i18n-attr="aria-label:nav.home">Velar</a>
+    <nav class="nav" data-i18n-attr="aria-label:nav.label">
+      <ul class="nav__list">
+        <li><button class="nav__trigger" type="button" data-mega="minimal" aria-expanded="false" aria-controls="mega-minimal" data-i18n="style.minimal">Minimal Elegante</button></li>
+        <li><button class="nav__trigger" type="button" data-mega="street" aria-expanded="false" aria-controls="mega-street" data-i18n="style.street">Streetwear &amp; Oversize</button></li>
+      </ul>
+    </nav>
     <div class="hdr__icons">
       <button class="hdr__btn" id="favOpen" type="button" data-i18n-attr="aria-label:favs.title">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.1A4.2 4.2 0 0 1 12 7.4a4.2 4.2 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"/></svg>
@@ -59,9 +63,45 @@
       </button>
     </div>
   </div>
-  <!-- Pannelli delle sezioni (desktop): contenuto generato in app.js -->
-  <div class="mega" id="mega-minimal" hidden></div>
-  <div class="mega" id="mega-street" hidden></div>
+  <!-- Pannelli delle sezioni (desktop) -->
+  <div class="mega" id="mega-minimal" hidden>
+    <div class="wrap grid mega__in">
+      <div class="mega__nav">
+        <ul class="mega__links">
+          <li><a href="/it/minimal-elegante/maglioni" data-page="page.minimal" data-page-name="Minimal Elegante: Maglioni" data-i18n="sec.knit">Maglioni</a></li>
+          <li><a href="/it/minimal-elegante/magliette" data-page="page.minimal" data-page-name="Minimal Elegante: Magliette" data-i18n="sec.tee">Magliette</a></li>
+          <li><a href="/it/minimal-elegante/pantaloni" data-page="page.minimal" data-page-name="Minimal Elegante: Pantaloni" data-i18n="sec.pants">Pantaloni</a></li>
+          <li><a href="/it/minimal-elegante/giacche" data-page="page.minimal" data-page-name="Minimal Elegante: Giacche" data-i18n="sec.jacket">Giacche</a></li>
+          <li><a href="/it/minimal-elegante/camicie" data-page="page.minimal" data-page-name="Minimal Elegante: Camicie" data-i18n="sec.shirt">Camicie</a></li>
+        </ul>
+        <a class="label mega__all" href="/it/minimal-elegante" data-page="page.minimal">Vedi tutto Minimal Elegante</a>
+      </div>
+      <div class="mega__slot" id="megaOm-minimal"></div><!-- outfit del mese di questo stile: generato in app.js -->
+      <button class="mega__tile mega__tile--b" type="button" data-act="mega-quiz" data-v="minimal">
+        <span class="ph"><img src="../assets/img/stile-minimal.svg" alt="" width="300" height="400" loading="lazy" decoding="async"></span>
+        <span class="mega__cap"><span class="label" data-i18n="hero.cta">Scopri il tuo outfit</span><span class="mega__quiz">Sei domande e ti proponiamo un outfit Minimal Elegante nelle tue taglie.</span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mega" id="mega-street" hidden>
+    <div class="wrap grid mega__in">
+      <div class="mega__nav">
+        <ul class="mega__links">
+          <li><a href="/it/streetwear-oversize/maglioni" data-page="page.street" data-page-name="Streetwear &amp; Oversize: Maglioni" data-i18n="sec.knit">Maglioni</a></li>
+          <li><a href="/it/streetwear-oversize/magliette" data-page="page.street" data-page-name="Streetwear &amp; Oversize: Magliette" data-i18n="sec.tee">Magliette</a></li>
+          <li><a href="/it/streetwear-oversize/pantaloni" data-page="page.street" data-page-name="Streetwear &amp; Oversize: Pantaloni" data-i18n="sec.pants">Pantaloni</a></li>
+          <li><a href="/it/streetwear-oversize/giacche" data-page="page.street" data-page-name="Streetwear &amp; Oversize: Giacche" data-i18n="sec.jacket">Giacche</a></li>
+          <li><a href="/it/streetwear-oversize/camicie" data-page="page.street" data-page-name="Streetwear &amp; Oversize: Camicie" data-i18n="sec.shirt">Camicie</a></li>
+        </ul>
+        <a class="label mega__all" href="/it/streetwear-oversize" data-page="page.street">Vedi tutto Streetwear &amp; Oversize</a>
+      </div>
+      <div class="mega__slot" id="megaOm-street"></div><!-- outfit del mese di questo stile: generato in app.js -->
+      <button class="mega__tile mega__tile--b" type="button" data-act="mega-quiz" data-v="street">
+        <span class="ph"><img src="../assets/img/stile-streetwear.svg" alt="" width="300" height="400" loading="lazy" decoding="async"></span>
+        <span class="mega__cap"><span class="label" data-i18n="hero.cta">Scopri il tuo outfit</span><span class="mega__quiz">Sei domande e ti proponiamo un outfit Streetwear &amp; Oversize nelle tue taglie.</span></span>
+      </button>
+    </div>
+  </div>
 </header>
 <div class="nav-scrim" id="navScrim" hidden></div>
 
@@ -69,11 +109,23 @@
 
   <!-- 1. HERO -->
   <section class="hero" id="top" aria-labelledby="claim">
-    <video class="hero__video" id="heroVideo" muted loop playsinline autoplay preload="metadata" aria-hidden="true" tabindex="-1"></video>
+    <!-- Immagine di riserva: si vede finché il video non mostra il primo fotogramma, o se il video non c'è -->
     <div class="hero__fallback" aria-hidden="true">
-      <div class="hero__art" id="heroArt"></div>
+      <img class="hero__art" src="../assets/img/hero.svg" alt="" width="300" height="400" decoding="async">
       <div class="hero__grain"></div>
     </div>
+    <!-- VIDEO DELLA HERO
+         Il browser usa la prima sorgente adatta allo schermo:
+         - con media="(max-aspect-ratio: 1/1)" la versione verticale per gli schermi in verticale (telefoni, tablet in verticale);
+         - altrimenti la versione orizzontale.
+         Per cambiare video basta cambiare src. Formato consigliato: MP4 H.264 senza audio, sotto i 4 MB, con "faststart".
+         Facoltativo: una versione WebM più leggera va messa PRIMA del rispettivo MP4, con lo stesso media e type="video/webm".
+         poster = immagine mostrata subito, mentre il video carica (il primo fotogramma, in WebP). -->
+    <video class="hero__video" id="heroVideo" autoplay muted loop playsinline preload="auto"
+           poster="../assets/img/hero-poster.webp" aria-hidden="true" tabindex="-1" disablepictureinpicture disableremoteplayback>
+      <source src="../assets/video/hero-mobile.mp4" type="video/mp4" media="(max-aspect-ratio: 1/1)">
+      <source src="../assets/video/hero-desktop.mp4" type="video/mp4">
+    </video>
     <div class="hero__veil" aria-hidden="true"></div>
     <div class="hero__content">
       <h1 class="hero__claim" id="claim" lang="en">Every era has its own signature style</h1>
@@ -99,7 +151,20 @@
   <!-- 3. I DUE STILI (da confermare) -->
   <section class="stl" aria-labelledby="stlTitle">
     <h2 class="sr" id="stlTitle" data-i18n="styles.title">I due stili</h2>
-    <div class="styles" id="styleList" data-reveal></div>
+    <div class="styles" id="styleList" data-reveal>
+      <article class="style" data-ri style="--i:0">
+        <a class="style__link" href="/it/minimal-elegante" data-page="page.minimal">
+          <div class="ph style__ph"><img src="/assets/img/minimalElegante.jpg" alt="" width="300" height="400" loading="lazy" decoding="async"></div>
+          <div class="style__meta"><h3 class="style__name" data-i18n="style.minimal">Minimal Elegante</h3><span class="label style__cta" data-i18n="styles.cta">Scopri lo stile</span></div>
+        </a>
+      </article>
+      <article class="style" data-ri style="--i:1">
+        <a class="style__link" href="/it/streetwear-oversize" data-page="page.street">
+          <div class="ph style__ph"><img src="/assets/img/streetware.jpg" alt="" width="300" height="400" loading="lazy" decoding="async"></div>
+          <div class="style__meta"><h3 class="style__name" data-i18n="style.street">Streetwear &amp; Oversize</h3><span class="label style__cta" data-i18n="styles.cta">Scopri lo stile</span></div>
+        </a>
+      </article>
+    </div>
   </section>
 
   <!-- 4. LE NOVITÀ -->
@@ -139,7 +204,20 @@
       </div>
       <div class="qs__ask" data-ri style="--i:1">
         <h3 class="h3 qs__q" id="qsQ" data-i18n="q.style">Quale stile ti rappresenta?</h3>
-        <div class="opts" id="qsOpts" role="group" aria-labelledby="qsQ"></div>
+        <div class="opts" id="qsOpts" role="group" aria-labelledby="qsQ">
+          <button class="opt" type="button" data-act="invite-opt" data-k="style" data-v="minimal" aria-pressed="false">
+            <span class="ph opt__ph"><img src="/assets/img/scopriElegante.jpg" alt="" width="300" height="400" loading="lazy" decoding="async"></span>
+            <span class="opt__label"><span class="opt__box"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3"/></svg></span><span data-i18n="o.minimal">Minimal elegante</span></span>
+          </button>
+          <button class="opt" type="button" data-act="invite-opt" data-k="style" data-v="street" aria-pressed="false">
+            <span class="ph opt__ph"><img src="/assets/img/streetware.jpg" alt="" width="300" height="400" loading="lazy" decoding="async"></span>
+            <span class="opt__label"><span class="opt__box"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3"/></svg></span><span data-i18n="o.street">Streetwear &amp; Oversize</span></span>
+          </button>
+          <button class="opt" type="button" data-act="invite-opt" data-k="style" data-v="both" aria-pressed="false">
+            <span class="ph opt__ph"><img src="/assets/img/misto.jpg" alt="" width="300" height="400" loading="lazy" decoding="async"></span>
+            <span class="opt__label"><span class="opt__box"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M2 6.2 4.8 9 10 3"/></svg></span><span data-i18n="o.both">Mi piacciono entrambi</span></span>
+          </button>
+        </div>
       </div>
     </div>
   </section>
@@ -192,7 +270,14 @@
       <div class="ftr__contact">
         <h2 class="label" data-i18n="ftr.contact">Contatti</h2>
         <ul id="ftrContacts"></ul>
-        <div class="ftr__social" id="ftrSocial"></div>
+        <!-- Social: sostituire il testo con i loghi ufficiali dei kit grafici delle piattaforme,
+             es. <img src="../assets/img/instagram.svg" alt="Instagram" width="24" height="24">.
+             Gli stessi indirizzi sono usati dai pulsanti «Seguici» della sezione social. -->
+        <div class="ftr__social" id="ftrSocial">
+          <a href="https://www.instagram.com/velar" target="_blank" rel="noopener" data-social="instagram">Instagram</a>
+          <a href="https://www.tiktok.com/@velar" target="_blank" rel="noopener" data-social="tiktok">TikTok</a>
+          <a href="https://www.youtube.com/@velar" target="_blank" rel="noopener" data-social="youtube">YouTube</a>
+        </div>
         <div class="langsel" role="group" data-i18n-attr="aria-label:ftr.lang">
           <button type="button" data-lang="it" aria-pressed="true" lang="it" aria-label="Italiano">IT</button>
           <button type="button" data-lang="en" aria-pressed="false" lang="en" aria-label="English">EN</button>
@@ -203,8 +288,15 @@
     <div class="ftr__bottom">
       <div>
         <p class="sr" data-i18n="ftr.pay">Pagamenti accettati</p>
-        <!-- Sostituire con le icone ufficiali dei circuiti (kit grafici di Stripe, Visa, Mastercard, Apple, Google) -->
-        <ul class="pay" id="payList"></ul>
+        <!-- Sostituire il testo con le icone ufficiali dei circuiti (kit grafici di Stripe, Visa, Mastercard, Apple, Google),
+             es. <li><img src="../assets/img/pay-visa.svg" alt="Visa" width="38" height="24"></li> -->
+        <ul class="pay" id="payList">
+          <li>Visa</li>
+          <li>Mastercard</li>
+          <li>American Express</li>
+          <li>Apple Pay</li>
+          <li>Google Pay</li>
+        </ul>
       </div>
       <p class="ftr__dim"><span data-i18n="ftr.company">Ragione sociale, sede legale e partita IVA da inserire</span>. © 2026 VELAR</p>
     </div>
@@ -218,7 +310,7 @@
 <aside class="drawer drawer--left mnav" id="mnav" role="dialog" aria-modal="true" aria-labelledby="mnavTitle" hidden>
   <div class="drawer__head">
     <h2 class="sr" id="mnavTitle" data-i18n="nav.menuTitle">Menu</h2>
-    <span class="logo" aria-hidden="true">Velar</span>
+    <span class="logo" aria-hidden="true"><img class="logo__img" src="../assets/img/logo.svg" alt="" width="153" height="24"></span>
     <button class="ibtn ibtn--bare" type="button" data-close data-i18n-attr="aria-label:close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 5l14 14M19 5 5 19"/></svg></button>
   </div>
   <nav class="drawer__body mnav__body" id="mnavBody" data-i18n-attr="aria-label:nav.label"></nav>
